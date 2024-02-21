@@ -1,4 +1,7 @@
+//package com.sat.tmf.paymentscli.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class User extends Object{
 	
@@ -11,6 +14,17 @@ public class User extends Object{
 	private int userId;
 	private String password;
 	
+	private List<BankAccount> baList = new ArrayList<BankAccount>();
+	
+//	private int paymentsAcctId;
+ private Wallet w;
+	
+	public List<BankAccount> getBaList() {
+		return baList;
+	}
+	public void setBaList(List<BankAccount> baList) {
+		this.baList = baList;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -60,6 +74,11 @@ public class User extends Object{
 	public String toString() {
 		return this.userId+":"+ this.firstName +":"+ this.lastName + ":"+this.phoneNum+":"+this.dateOfBirth+":"+this.communicationAddr;
 	}
+	
+	public String userToFileRecord() {
+		return this.userId+","+ this.firstName +","+ this.lastName + ","+this.phoneNum+","+this.dateOfBirth+","+this.communicationAddr+"\n";
+	}
+	
 	
 	
 }
