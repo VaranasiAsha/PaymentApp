@@ -1,23 +1,20 @@
-//package com.sat.tmf.paymentscli.entity;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class User extends Object{
-	
-	private String firstName;
+
+	private String firstName; 
 	private String lastName;
-	private long phoneNum;
-	private String dateOfBirth;
-	private String communicationAddr;
-	
-	private int userId;
+	private long phoneNumber;
+	private String dateofBirth;
+	private  String address;
+ 
+	private  int userId;
 	private String password;
 	
 	private List<BankAccount> baList = new ArrayList<BankAccount>();
 	
-//	private int paymentsAcctId;
- private Wallet w;
+	
 	
 	public List<BankAccount> getBaList() {
 		return baList;
@@ -37,23 +34,23 @@ public class User extends Object{
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public long getPhoneNum() {
-		return phoneNum;
+	public long getPhoneNumber() {
+		return phoneNumber;
 	}
-	public void setPhoneNum(long phoneNum) {
-		this.phoneNum = phoneNum;
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-	public String getDateOfBirth() {
-		return dateOfBirth;
+	public String getDateofBirth() {
+		return dateofBirth;
 	}
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateofBirth(String dateofBirth) {
+		this.dateofBirth = dateofBirth;
 	}
-	public String getCommunicationAddr() {
-		return communicationAddr;
+	public String getAddress() {
+		return address;
 	}
-	public void setCommunicationAddr(String communicationAddr) {
-		this.communicationAddr = communicationAddr;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public int getUserId() {
 		return userId;
@@ -68,17 +65,10 @@ public class User extends Object{
 		this.password = password;
 	}
 	
-//	Account[]
-//	BankAccount[]
-	@Override
 	public String toString() {
-		return this.userId+":"+ this.firstName +":"+ this.lastName + ":"+this.phoneNum+":"+this.dateOfBirth+":"+this.communicationAddr;
+		return this.userId+" : "+this.firstName+" : "+this.lastName+" : "+this.phoneNumber+" : "+this.dateofBirth+" : "+this.address;
 	}
-	
 	public String userToFileRecord() {
-		return this.userId+","+ this.firstName +","+ this.lastName + ","+this.phoneNum+","+this.dateOfBirth+","+this.communicationAddr+"\n";
+		return this.userId+","+ this.firstName +","+ this.lastName + ","+this.phoneNumber+","+this.dateofBirth+","+this.address+"\n";
 	}
-	
-	
-	
 }
